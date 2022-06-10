@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   background-color: #1a1919;
-  scroll-padding: 75px;
+  scroll-padding-top: 75px;
   scrollbar-width: 0px;
   -ms-overflow-style: none;
 }
@@ -162,13 +162,16 @@
   font-size: calc(min(6.5em, 15vw));
   color: white;
   text-shadow: 0px 0px 20px #18fc23;
-  width: calc(max(350px, 45vw));
+  width: calc(max(320px, 45vw));
   -webkit-animation: flicker 10s linear infinite;
           animation: flicker 10s linear infinite;
 }
 
 .landing p {
   font-size: calc(min(2em, 4vw));
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: white;
   text-align: center;
 }
@@ -209,14 +212,11 @@
 }
 
 .about p {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: calc(clamp(300px, 40vw, 600px));
   font-size: calc(max(1.3vw, 1.5em));
   text-align: center;
   border-top: 2px solid #7efc84;
   border-bottom: 2px solid #7efc84;
-  padding: 10px 0;
 }
 
 .about .p_img_container {
@@ -231,8 +231,7 @@
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: center;
   gap: calc(min(10vw, 50px));
 }
 
@@ -269,6 +268,7 @@
           flex-direction: column;
   gap: 3vw;
   color: white;
+  width: calc(clamp(310px, 50vw, 500px));
 }
 
 .techstack_container p {
@@ -304,9 +304,11 @@
           align-items: center;
   list-style: none;
   gap: 2vw;
+  max-width: 90vw;
 }
 
 .techstack_container .techstack li {
+  font-size: calc(clamp(0.7em, 2vw, 1.5em));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,7 +325,7 @@
 }
 
 .techstack_container .techstack li img {
-  width: calc(min(100px, 15vw));
+  width: calc(clamp(50px, 2vw ,100px));
 }
 
 .projects {
@@ -400,7 +402,7 @@
 }
 
 .projects .each_project h2 {
-  font-size: calc(min(3em, 8vw));
+  font-size: calc(min(3em, 5vw));
   line-height: 80%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -409,87 +411,6 @@
   height: -moz-fit-content;
   height: fit-content;
   border-bottom: 2px solid #7efc84;
-}
-
-.projects .each_project .description_p {
-  font-size: calc(min(1.3em, 4vw));
-  height: calc(max(200px, -webkit-fit-content));
-  height: calc(max(200px, -moz-fit-content));
-  height: calc(max(200px, fit-content));
-  width: calc(clamp(300px, 80vw, 600px));
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-left: 2px solid #7efc84;
-  border-right: 2px solid #7efc84;
-  padding: 0 5%;
-}
-
-.projects .each_project .button_group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 4vw;
-}
-
-.projects .each_project .button_group button {
-  position: relative;
-  height: calc(clamp(50px, 7.5vw, 75px));
-  width: calc(clamp(100px, 15vw, 150px));
-  border: none;
-  border-top: 2px solid #7efc84;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-}
-
-.projects .each_project .button_group button .fill_button {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #7efc84;
-  top: -100%;
-  -webkit-transition: top 0.5s ease;
-  transition: top 0.5s ease;
-}
-
-.projects .each_project .button_group button p {
-  position: absolute;
-  font-size: calc(clamp(1.1em, 2vw , 1.5em));
-  background: none;
-  color: white;
-  -webkit-transition: color 0.5s ease;
-  transition: color 0.5s ease;
-  -webkit-transition-delay: 0.25s;
-          transition-delay: 0.25s;
-}
-
-.projects .each_project .button_group button:hover .fill_button {
-  top: 0;
-}
-
-.projects .each_project .button_group button:hover p {
-  color: #1a1919;
 }
 
 .projects .each_project .description_container {
@@ -509,11 +430,92 @@
   gap: 25px;
 }
 
+.projects .each_project .description_container .description_p {
+  font-size: calc(min(1.3em, 4vw));
+  height: calc(max(200px, -webkit-fit-content));
+  height: calc(max(200px, -moz-fit-content));
+  height: calc(max(200px, fit-content));
+  width: calc(clamp(300px, 80vw, 600px));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 2px solid #7efc84;
+  border-right: 2px solid #7efc84;
+  padding: 0 5%;
+}
+
+.projects .each_project .description_container .button_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4vw;
+}
+
+.projects .each_project .description_container .button_group button {
+  position: relative;
+  height: calc(clamp(50px, 7.5vw, 75px));
+  width: calc(clamp(100px, 15vw, 150px));
+  border: none;
+  border-top: 2px solid #7efc84;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.projects .each_project .description_container .button_group button .fill_button {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #7efc84;
+  top: -100%;
+  -webkit-transition: top 0.5s ease;
+  transition: top 0.5s ease;
+}
+
+.projects .each_project .description_container .button_group button p {
+  position: absolute;
+  font-size: calc(clamp(1.1em, 2vw , 1.5em));
+  background: none;
+  color: white;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.projects .each_project .description_container .button_group button:hover .fill_button {
+  top: 0;
+}
+
+.projects .each_project .description_container .button_group button:hover p {
+  color: #1a1919;
+}
+
 .projects .each_project .img_container {
   padding: 1.5%;
   border-top: 2px solid #7efc84;
   border-bottom: 2px solid #7efc84;
-  width: calc(min(711px, 90vw));
+  width: calc(min(711px, 85vw));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -529,7 +531,7 @@
 
 .projects .each_project .img_container .website_img {
   height: calc(min(400px, 50.625vw));
-  width: calc(min(711px, 90vw));
+  width: calc(min(711px, 85vw));
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
@@ -737,7 +739,7 @@
     width: 100vw;
     gap: 0px;
     position: fixed;
-    top: -100%;
+    top: -110%;
     list-style: none;
     -webkit-transition: -webkit-transform 1s;
     transition: -webkit-transform 1s;

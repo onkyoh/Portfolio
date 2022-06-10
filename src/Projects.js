@@ -20,6 +20,7 @@ const Projects = ({AOS}) => {
     <div className='projects_container'>
 
         <div className='each_project' data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
+
             <div className='description_container'>
                 <h2>CalendarHub</h2>
                 <p className='description_p'>A website where users can sign up, create updatable calendars, and share those calendars with their contacts. 
@@ -29,15 +30,20 @@ const Projects = ({AOS}) => {
                     <button onClick={()=> openInNewTab("https://github.com/onkyoh/Group-Calendar")}><div className='fill_button'></div><p>View Code</p></button>
                 </div>
             </div>
+
             <div className='img_container'>
                 <img className='website_img' src={CalendarFS} alt="calendar_website"/>   
             </div>
-        
         </div>
-        <div className='each_project' id='weather_flex' data-aos="slide-left" data-aos-duration="1500" data-aos-easing="ease-in-out">
+
+        
+        
+        <div className='each_project' id='weather_flex' data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
+           
             <div className='img_container'>
                 <img className='website_img' src={WeatherFS} alt="weather_website"/>
             </div>
+
             <div className='description_container'>
                 <h2>Messagesforweather</h2>
                 <p className='description_p'>
@@ -49,8 +55,9 @@ const Projects = ({AOS}) => {
                     <button onClick={()=> openInNewTab("https://github.com/onkyoh/Weather-Message")}><div className='fill_button'></div><p>View Code</p></button>
                 </div>
             </div>
-     
+            
         </div>
+
         <div className='each_project' data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out">   
             <div className='description_container'>
                 <h2>Todolist</h2>

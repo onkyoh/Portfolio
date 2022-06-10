@@ -19,7 +19,7 @@ function App() {
       <div className='name'>
         Adnan Radwan
       </div>
-      <p>Creator | Frontend developer | Perfectionist </p>
+      <p >Creator | Frontend developer | Perfectionist </p>
     </section>
 
     <section className="about" id="about">
@@ -32,7 +32,7 @@ function App() {
             This has led to the creation of many <a href="#projects">projects</a>, and will lead to the creation of many more.
           </p>
         </div>
-          <div className='img' data-aos="slide-left" data-aos-duration="1000"></div>
+          {/* <div className='img' data-aos="slide-left" data-aos-duration="1000"></div> */}
       </div>
       <Techstack AOS={AOS}/>
     </section>

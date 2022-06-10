@@ -19,7 +19,7 @@ $light-gray: rgb(78, 77, 77);
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     background-color: $primary-gray;
-    scroll-padding: 75px;
+    scroll-padding-top: 75px;
     scrollbar-width: 0px;
     -ms-overflow-style: none;
     ::-webkit-scrollbar {
@@ -34,6 +34,7 @@ $light-gray: rgb(78, 77, 77);
         font-weight: bold;
     }
 }
+
 
 
 @keyframes flicker {
@@ -58,6 +59,7 @@ $light-gray: rgb(78, 77, 77);
 }
 
 .navbar {
+    
     @include flexCenter();
     position: fixed;
     top: 0;
@@ -95,6 +97,9 @@ $light-gray: rgb(78, 77, 77);
     @include flexCenter();
     flex-direction: column;
     background-color: $primary-gray;
+    
+
+
 
     .name {
         @include flexCenter();
@@ -103,14 +108,17 @@ $light-gray: rgb(78, 77, 77);
         font-size: calc(min(6.5em, 15vw));
         color: white;
         text-shadow: 0px 0px 20px $neon-green;
-        width: calc(max(350px, 45vw));
+        width: calc(max(320px, 45vw));
         animation: flicker 10s linear infinite;
+        
     }
 
     p {
         font-size: calc(min(2em, 4vw));
+        width: fit-content;
         color: white;
         text-align: center;
+        
     }
   
 }
@@ -123,6 +131,8 @@ $light-gray: rgb(78, 77, 77);
     flex-direction: column;
     color: white;
     gap: calc(min(10vw, 40px));
+    
+
 
 
     h1 {
@@ -136,18 +146,17 @@ $light-gray: rgb(78, 77, 77);
         font-weight: bold;
     }
     p {
-        width: fit-content;
+        width: calc(clamp(300px, 40vw, 600px));
         font-size: calc(max(1.3vw, 1.5em));
         text-align: center;
         border-top: 2px solid $light-green;
         border-bottom: 2px solid $light-green;
-        padding: 10px 0; 
     }
 
    .p_img_container {
         @include flexCenter();
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
         gap: calc(min(10vw, 50px));
 
         p {
@@ -175,6 +184,8 @@ $light-gray: rgb(78, 77, 77);
     flex-direction: column;
     gap: 3vw;
     color: white;
+    width: calc(clamp(310px, 50vw, 500px));
+   
 
 
     p {
@@ -192,11 +203,14 @@ $light-gray: rgb(78, 77, 77);
         @include flexCenter();
         list-style: none;
         gap: 2vw;
+        max-width: 90vw;
+
         li {
+            font-size: calc(clamp(0.7em, 2vw, 1.5em));
             @include flexCenter();
             flex-direction: column;
             img {
-                width: calc(min(100px, 15vw));
+                width: calc(clamp(50px, 2vw ,100px));
             }
         }
     }
@@ -211,6 +225,7 @@ $light-gray: rgb(78, 77, 77);
     gap: 5vw;
     text-align: center;
     color: white;
+    
   
 
     h1 {
@@ -241,86 +256,88 @@ $light-gray: rgb(78, 77, 77);
         gap: calc(max(25px, 5vw));
 
         h2 {
-            font-size: calc(min(3em, 8vw));
+            font-size: calc(min(3em, 5vw));
             line-height: 80%;
             width: fit-content;
             height: fit-content;
             border-bottom: 2px solid $light-green;
         }
 
-        .description_p {
-            font-size:calc(min(1.3em, 4vw));
-            height: calc(max(200px, fit-content));
-            width: calc(clamp(300px, 80vw, 600px));
-            @include flexCenter();
-            border-left: 2px solid $light-green;
-            border-right: 2px solid $light-green;
-            padding: 0 5%;
-
-        }
-
-        .button_group {
-            @include flexCenter();
-            gap: 4vw;
-            
-            button {
-                position: relative;
-                height: calc(clamp(50px, 7.5vw, 75px));
-                width: calc(clamp(100px, 15vw, 150px));
-                border: none;
-                border-top: 2px solid $light-green;
-                cursor: pointer;
-                @include flexCenter();
-                overflow: hidden;
-                
-               
-
-                .fill_button {
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    background-color: $light-green;
-                    top: -100%;
-                    transition: top 0.5s ease;
-                }
-
-                p {
-                    position: absolute;
-                    font-size: calc(clamp(1.1em, 2vw , 1.5em));
-                    background: none;
-                    color: white;
-                    transition: color 0.5s ease;
-                    transition-delay: 0.25s;
-                }
-                &:hover {  
-                    .fill_button {
-                        top: 0;
-                    }
-                    p {
-                        color: $primary-gray;
-                    }
-                }
-            }
-        }
-
         .description_container {
             @include flexCenter();
             flex-direction: column;
             gap: 25px;
+
+            .description_p {
+                font-size:calc(min(1.3em, 4vw));
+                height: calc(max(200px, fit-content));
+                width: calc(clamp(300px, 80vw, 600px));
+                @include flexCenter();
+                border-left: 2px solid $light-green;
+                border-right: 2px solid $light-green;
+                padding: 0 5%;
+
+            }
+
+            .button_group {
+                @include flexCenter();
+                gap: 4vw;
+                
+                button {
+                    position: relative;
+                    height: calc(clamp(50px, 7.5vw, 75px));
+                    width: calc(clamp(100px, 15vw, 150px));
+                    border: none;
+                    border-top: 2px solid $light-green;
+                    cursor: pointer;
+                    @include flexCenter();
+                    overflow: hidden;
+                    
+                
+
+                    .fill_button {
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        background-color: $light-green;
+                        top: -100%;
+                        transition: top 0.5s ease;
+                    }
+
+                    p {
+                        position: absolute;
+                        font-size: calc(clamp(1.1em, 2vw , 1.5em));
+                        background: none;
+                        color: white;
+                        transition: color 0.5s ease;
+                        transition-delay: 0.25s;
+                    }
+                    &:hover {  
+                        .fill_button {
+                            top: 0;
+                        }
+                        p {
+                            color: $primary-gray;
+                        }
+                    }
+                }
+        }
+
+     
         }
         
         .img_container {
             padding: 1.5%;
             border-top: 2px solid $light-green;
             border-bottom: 2px solid $light-green;
-            width: calc(min(711px, 90vw));
+            width: calc(min(711px, 85vw));
             @include flexCenter();
             overflow: hidden;
             position: relative;
 
             .website_img {
                 height: calc(min(400px, 50.625vw));
-                width: calc(min(711px, 90vw));
+                width: calc(min(711px, 85vw));
                 transition: transform 1s;
             }
 
@@ -343,6 +360,7 @@ $light-gray: rgb(78, 77, 77);
     @include flexCenter();
     flex-direction: column;
     color: white;
+    
     h1 {
         width: fit-content;
         font-size: calc(min(5.5em, 12vw));
@@ -406,8 +424,10 @@ $light-gray: rgb(78, 77, 77);
 }
 
 @media only screen and (max-width: 600px) {
+
     .about {
         gap: 50px;
+        
         h1 {
             align-self: center;
         }
@@ -421,12 +441,12 @@ $light-gray: rgb(78, 77, 77);
     }
       
     .navbar {
-
         position: fixed;
         top: 0%;
         padding: 0 5%;
         margin: 0 !important;
         border-bottom: none;
+        
         &:hover {
             border-bottom: none;
         }
@@ -464,7 +484,7 @@ $light-gray: rgb(78, 77, 77);
             width: 100vw;
             gap: 0px;
             position: fixed;
-            top: -100%;
+            top: -110%;
             list-style: none;
             transition: transform 1s;
             * {
