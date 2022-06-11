@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 
-const Navbar = ({AOS}) => {
+const Navbar = ({AOS, open, setOpen}) => {
 
-  const [open, setOpen] = useState("close")
+  
 
   const handleDropdown = () => {
     if (open === 'open') {
@@ -13,7 +13,7 @@ const Navbar = ({AOS}) => {
   }
 
   return (
-    <div className='navbar'>
+    <div className='navbar'  data-aos="slide-down" data-aos-duration="1000">
       <ul className={open}>
           <a href='#landing'>Landing</a>
           <a href='#about'>About</a>

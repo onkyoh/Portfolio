@@ -56,6 +56,10 @@ $light-gray: rgb(78, 77, 77);
         font-weight: bold;
     }
 }
+html, body {
+    width: 100vw;
+    overflow-x: hidden ;
+}
 
 .navbar {
     position: fixed;
@@ -67,9 +71,9 @@ $light-gray: rgb(78, 77, 77);
     ul {
         @include flexCenter();
         list-style: none;
-        gap: 5vw;
+        gap: calc(min(5vw, 100px));
         a {
-            font-size: 0.5em;
+            font-size: calc(clamp(0.5em, 3vw, 1.5em));
             color: white;
             text-decoration: none;
         }
@@ -319,7 +323,56 @@ $light-gray: rgb(78, 77, 77);
     #weather_flex {
         flex-direction: column-reverse;
     }
- 
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        border-bottom: 2px solid white;
+        align-items: flex-start;
+        ul {
+            position: absolute;
+            margin-top: 75px;
+            @include flexCenter();
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 90%;
+            list-style: none;
+            gap: 0vw;
+            box-shadow: 0px 0px 5px 1px $light-green;
+            transition: transform 1s;
+            a {
+                font-size: 1.5em;
+                border-bottom: 2px solid $light-green;
+                width: 100%;
+                text-align: center;
+                padding: 2.5% 0;
+            }
+        }
+        .open {
+            transform: translate(0, 0%);
+        }
+        .close {
+            transform: translate(0, -105%);
+        }
+        .drop_sign {
+            @include flexCenter();
+            justify-content: flex-end;
+            width: 100%;
+            height: 75px;
+            border-bottom: 2px solid white;
+            padding: 0 2%;
+            position: absolute;
+            div {
+                user-select: none;
+                cursor: pointer;
+                @include flexCenter();
+                height: 50px;
+                width: 50px;
+                color: white;
+                font-size: 2em;
+            }
+        }
+    }
 }
 
 

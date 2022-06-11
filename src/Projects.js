@@ -4,7 +4,7 @@ import TodoFS from '../src/projects/TodoFS.png'
 import WeatherFS from '../src/projects/WeatherFS.png'
 
 
-const Projects = () => {
+const Projects = ({AOS}) => {
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -15,7 +15,7 @@ const Projects = () => {
 
     <div className='projects_container'>
 
-        <div className='each_project'>
+        <div className='each_project' data-aos="slide-right" data-aos-duration="2000">
             <div className='description_container'>
                 <h2>CalendarHub</h2>
                 <p>A website where users can sign up, create updatable calendars, and share those calendars with their contacts. 
@@ -33,7 +33,7 @@ const Projects = () => {
 
         
         
-        <div className='each_project' id='weather_flex'>
+        <div className='each_project' id='weather_flex' data-aos="slide-left" data-aos-duration="2000">
            
             <div className='img_container'>
                 <img className='website_img' src={WeatherFS} alt="weather_website"/>
@@ -53,7 +53,7 @@ const Projects = () => {
             
         </div>
 
-        <div className='each_project'>   
+        <div className='each_project' data-aos="slide-right" data-aos-duration="2000">   
             <div className='description_container'>
                 <h2>Todolist</h2>
                 <p className='description_p'>
