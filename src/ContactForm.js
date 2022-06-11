@@ -5,7 +5,7 @@ const ContactForm = () => {
 
   return (
     <div>
-      
+      Contact stuff
     </div>
   )
 }

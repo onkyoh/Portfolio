@@ -205,7 +205,7 @@
 }
 
 .about .p_img_container p {
-  width: calc(min(100%, 500px));
+  width: calc(min(100%, 600px));
   font-size: calc(clamp(1.1em, 3vw, 1.5em));
   border-top: 2px solid #60f567;
   border-bottom: 2px solid #60f567;
@@ -335,13 +335,31 @@
 }
 
 .projects #slogan {
-  margin: 100px 0;
+  margin: 75px 0;
 }
 
-.projects .each_project {
+.projects .projects_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(min(90%, 1600px));
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 100px;
+}
+
+.projects .projects_container .each_project {
   display: block;
   margin: auto;
-  width: calc(min(90%, 1600px));
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,10 +374,9 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   gap: calc(max(25px, 2vw));
-  margin-bottom: calc(max(7.5vw, 25px));
 }
 
-.projects .each_project .description_container {
+.projects .projects_container .each_project .description_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,19 +394,19 @@
   gap: 25px;
 }
 
-.projects .each_project .description_container h2 {
+.projects .projects_container .each_project .description_container h2 {
   font-size: calc(clamp(1.7em, 2vw, 3.5em));
   line-height: 80%;
   border-bottom: 2px solid #7efc84;
 }
 
-.projects .each_project .description_container p {
+.projects .projects_container .each_project .description_container p {
   width: 100%;
   padding: 0 5%;
   font-size: calc(clamp(0.9em, 2vw , 1.3em));
 }
 
-.projects .each_project .description_container .button_group {
+.projects .projects_container .each_project .description_container .button_group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -402,7 +419,7 @@
   gap: 25px;
 }
 
-.projects .each_project .description_container .button_group button {
+.projects .projects_container .each_project .description_container .button_group button {
   position: relative;
   height: calc(clamp(50px, 7.5vw, 75px));
   width: calc(clamp(100px, 15vw, 150px));
@@ -421,7 +438,7 @@
   overflow: hidden;
 }
 
-.projects .each_project .description_container .button_group button .fill_button {
+.projects .projects_container .each_project .description_container .button_group button .fill_button {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -431,7 +448,7 @@
   transition: top 0.5s ease;
 }
 
-.projects .each_project .description_container .button_group button p {
+.projects .projects_container .each_project .description_container .button_group button p {
   position: absolute;
   font-size: calc(clamp(1em, 2vw , 1.5em));
   border: none;
@@ -443,15 +460,15 @@
           transition-delay: 0.15s;
 }
 
-.projects .each_project .description_container .button_group button:hover .fill_button {
+.projects .projects_container .each_project .description_container .button_group button:hover .fill_button {
   top: 0;
 }
 
-.projects .each_project .description_container .button_group button:hover p {
+.projects .projects_container .each_project .description_container .button_group button:hover p {
   color: #1a1919;
 }
 
-.projects .each_project .img_container {
+.projects .projects_container .each_project .img_container {
   width: calc(min(100%, 600px));
   padding: 1%;
   border-top: 2px solid #7efc84;
@@ -468,7 +485,7 @@
   overflow: hidden;
 }
 
-.projects .each_project .img_container img {
+.projects .projects_container .each_project .img_container img {
   aspect-ratio: 16/9;
   width: calc(min(100%, 711px));
   -webkit-transition: -webkit-transform 1s;
@@ -477,7 +494,7 @@
   transition: transform 1s, -webkit-transform 1s;
 }
 
-.projects .each_project .img_container:hover .website_img {
+.projects .projects_container .each_project .img_container:hover .website_img {
   -webkit-transform: scale(110%);
           transform: scale(110%);
 }

@@ -121,7 +121,7 @@ $light-gray: rgb(78, 77, 77);
         flex-wrap: wrap;
         gap: 100px;
         p {
-            width: calc(min(100%, 500px));
+            width: calc(min(100%, 600px));
             font-size: calc(clamp(1.1em, 3vw, 1.5em));
             border-top: 2px solid $primary-green;
             border-bottom: 2px solid $primary-green;
@@ -198,98 +198,103 @@ $light-gray: rgb(78, 77, 77);
         padding: 0 2%;
     }
     #slogan {
-        margin: 100px 0 ;
+        margin: 75px 0 ;
     }
-    .each_project {
-        display: block;
-        margin: auto;
-        width: calc(min(90%, 1600px));
+
+    .projects_container {
         @include flexCenter();
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: calc(max(25px, 2vw));
-        margin-bottom: calc(max(7.5vw, 25px));
+        width: calc(min(90%, 1600px));
+        flex-direction: column;
+        gap: 100px;
 
-
-        .description_container {
+        .each_project {
+            display: block;
+            margin: auto;
+            width: 100%;
             @include flexCenter();
-            flex-direction: column;
-            width: calc(min(100%, 500px));
-            gap: 25px;
-    
-            h2 {
-                font-size: calc(clamp(1.7em, 2vw, 3.5em));
-                line-height: 80%;
-                border-bottom: 2px solid $light-green;
-            }
-            p {
-                width: 100%;
-                padding: 0 5%;
-                font-size: calc(clamp(0.9em, 2vw , 1.3em))
-            }
-            .button_group {
-                @include flexCenter();
-                gap: 25px;
-          
-                button {
-                    position: relative;
-                    height: calc(clamp(50px, 7.5vw, 75px));
-                    width: calc(clamp(100px, 15vw, 150px));
-                    border: none;
-                    border-top: 2px solid $light-green;
-                    cursor: pointer;
-                    @include flexCenter();
-                    overflow: hidden;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: calc(max(25px, 2vw));
 
-                    .fill_button {
-                        position: absolute;
-                        height: 100%;
-                        width: 100%;
-                        background-color: $light-green;
-                        top: -100%;
-                        transition: top 0.5s ease;
-                    }
-                    p {
-                        position: absolute;
-                        font-size: calc(clamp(1em, 2vw , 1.5em));
+
+            .description_container {
+                @include flexCenter();
+                flex-direction: column;
+                width: calc(min(100%, 500px));
+                gap: 25px;
+        
+                h2 {
+                    font-size: calc(clamp(1.7em, 2vw, 3.5em));
+                    line-height: 80%;
+                    border-bottom: 2px solid $light-green;
+                }
+                p {
+                    width: 100%;
+                    padding: 0 5%;
+                    font-size: calc(clamp(0.9em, 2vw , 1.3em))
+                }
+                .button_group {
+                    @include flexCenter();
+                    gap: 25px;
+            
+                    button {
+                        position: relative;
+                        height: calc(clamp(50px, 7.5vw, 75px));
+                        width: calc(clamp(100px, 15vw, 150px));
                         border: none;
-                        background: none;
-                        color: white;
-                        transition: color 0.5s ease;
-                        transition-delay: 0.15s;
-                    }
-                    &:hover {  
+                        border-top: 2px solid $light-green;
+                        cursor: pointer;
+                        @include flexCenter();
+                        overflow: hidden;
+
                         .fill_button {
-                            top: 0;
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            background-color: $light-green;
+                            top: -100%;
+                            transition: top 0.5s ease;
                         }
                         p {
-                            color: $primary-gray;
+                            position: absolute;
+                            font-size: calc(clamp(1em, 2vw , 1.5em));
+                            border: none;
+                            background: none;
+                            color: white;
+                            transition: color 0.5s ease;
+                            transition-delay: 0.15s;
+                        }
+                        &:hover {  
+                            .fill_button {
+                                top: 0;
+                            }
+                            p {
+                                color: $primary-gray;
+                            }
                         }
                     }
                 }
             }
-        }
-        .img_container {
-            width: calc(min(100%, 600px));
-            padding: 1%;
-            border-top: 2px solid $light-green;
-            border-bottom: 2px solid $light-green;
-            @include flexCenter();
-            overflow: hidden;
-            img {
-                aspect-ratio: 16/9;
-                width: calc(min(100%, 711px));
-                transition: transform 1s;
+            .img_container {
+                width: calc(min(100%, 600px));
+                padding: 1%;
+                border-top: 2px solid $light-green;
+                border-bottom: 2px solid $light-green;
+                @include flexCenter();
+                overflow: hidden;
+                img {
+                    aspect-ratio: 16/9;
+                    width: calc(min(100%, 711px));
+                    transition: transform 1s;
+                }
+                &:hover {
+                    .website_img  {
+                        transform: scale(110%)
+                        }
+                } 
             }
-            &:hover {
-                .website_img  {
-                    transform: scale(110%)
-                    }
-            } 
         }
     }
-
-    
 }
 
 .contact {
