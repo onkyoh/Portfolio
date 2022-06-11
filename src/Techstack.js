@@ -8,19 +8,19 @@ import Bootstrap from '../src/icons/bootstrap.png'
 import Sass from '../src/icons/sass.png'
 import Firebase from '../src/icons/firebase.png'
 
-const Techstack = ({AOS}) => {
+const Techstack = () => {
 
   return (
-    <div className='techstack_container' data-aos="slide-up" data-aos-duration="1000">
+    <div className='techstack_container'>
       <p >Technology I use:</p>
-      <div className='techstack_flex_container'>
-        <ul className='techstack'>
+      <div>
+        <ul>
           <li>HTML <img src={Html} alt="Html"/></li>
           <li>CSS <img src={Css} alt="Css"/></li>
           <li>JAVASCRIPT <img src={Javascript} alt="Javascript"/></li>
           <li>TYPESCRIPT <img src={Typescript} alt="Typescript"/></li>
         </ul>
-        <ul className='techstack'>
+        <ul>
           <li>REACT <img src={ReactIcon} alt="React"/></li>
           <li>BOOTSTRAP <img src={Bootstrap} alt="Bootstrap"/></li>
           <li>SASS <img src={Sass} alt="Sass"/></li>

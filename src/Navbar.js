@@ -13,7 +13,7 @@ const Navbar = ({AOS}) => {
   }
 
   return (
-    <div className='navbar' data-aos="slide-down" data-aos-duration="1000">
+    <div className='navbar'>
       <ul className={open}>
           <a href='#landing'>Landing</a>
           <a href='#about'>About</a>

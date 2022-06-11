@@ -1,14 +1,10 @@
 import React from 'react'
 import CalendarFS from '../src/projects/CalendarFS.png'
-import CalendarMobile from '../src/projects/CalendarMobile.png'
 import TodoFS from '../src/projects/TodoFS.png'
-import TodoMobile from '../src/projects/TodoMobile.png'
 import WeatherFS from '../src/projects/WeatherFS.png'
-import WeatherMobile from '../src/projects/WeatherMobile.png'
-import Monitor from '../src/projects/Monitor.png'
 
 
-const Projects = ({AOS}) => {
+const Projects = () => {
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -19,11 +15,10 @@ const Projects = ({AOS}) => {
 
     <div className='projects_container'>
 
-        <div className='each_project' data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
-
+        <div className='each_project'>
             <div className='description_container'>
                 <h2>CalendarHub</h2>
-                <p className='description_p'>A website where users can sign up, create updatable calendars, and share those calendars with their contacts. 
+                <p>A website where users can sign up, create updatable calendars, and share those calendars with their contacts. 
                     The utilization of Google Firebase allows for backend user data storage and website analytics.</p>
                 <div className='button_group'>
                     <button onClick={()=> openInNewTab("https://calendarhub.netlify.app/")}><div className='fill_button'></div><p>Live Demo</p></button>
@@ -38,7 +33,7 @@ const Projects = ({AOS}) => {
 
         
         
-        <div className='each_project' id='weather_flex' data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
+        <div className='each_project' id='weather_flex'>
            
             <div className='img_container'>
                 <img className='website_img' src={WeatherFS} alt="weather_website"/>
@@ -58,7 +53,7 @@ const Projects = ({AOS}) => {
             
         </div>
 
-        <div className='each_project' data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out">   
+        <div className='each_project'>   
             <div className='description_container'>
                 <h2>Todolist</h2>
                 <p className='description_p'>
