@@ -51,6 +51,7 @@
   scrollbar-width: 0px;
   scroll-padding: 75px;
   -ms-overflow-style: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * ::-webkit-scrollbar {
@@ -112,6 +113,12 @@ html, body {
   font-size: calc(clamp(0.5em, 3vw, 1.5em));
   color: white;
   text-decoration: none;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+.navbar ul a:hover {
+  color: #7efc84;
 }
 
 .navbar .drop_sign {
@@ -136,6 +143,8 @@ html, body {
           flex-direction: column;
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .landing .name {
@@ -162,6 +171,56 @@ html, body {
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
+}
+
+.landing .arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: none;
+  position: absolute;
+  bottom: 5%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.landing .arrow #rectangle {
+  aspect-ratio: 1/1.75;
+  width: calc(max(1.5vw, 25px));
+  background-color: #69916b;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+.landing .arrow #triangle {
+  width: 0;
+  height: 0;
+  border-left: calc(max(1.5vw, 25px)) solid transparent;
+  border-right: calc(max(1.5vw, 25px)) solid transparent;
+  border-top: calc(max(1.5vw, 25px)) solid #69916b;
+  background: none;
+  -webkit-transition: border-top 1s;
+  transition: border-top 1s;
+}
+
+.landing .arrow:hover #rectangle {
+  background-color: #7efc84;
+}
+
+.landing .arrow:hover #triangle {
+  border-top: calc(max(1.5vw, 25px)) solid #7efc84;
 }
 
 .about {
@@ -565,11 +624,9 @@ html, body {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    width: 90%;
+    width: 40%;
     list-style: none;
     gap: 0vw;
-    -webkit-box-shadow: 0px 0px 5px 1px #7efc84;
-            box-shadow: 0px 0px 5px 1px #7efc84;
     -webkit-transition: -webkit-transform 1s;
     transition: -webkit-transform 1s;
     transition: transform 1s;
@@ -577,10 +634,18 @@ html, body {
   }
   .navbar ul a {
     font-size: 1.5em;
-    border-bottom: 2px solid #7efc84;
+    border: 2px solid #7efc84;
+    border-top: none;
+    background-color: #1a1919;
     width: 100%;
     text-align: center;
     padding: 2.5% 0;
+    -webkit-transition: color 0.25s, background-color 1s;
+    transition: color 0.25s, background-color 1s;
+  }
+  .navbar ul a:hover {
+    color: #1a1919;
+    background-color: #7efc84;
   }
   .navbar .open {
     -webkit-transform: translate(0, 0%);
@@ -628,6 +693,60 @@ html, body {
     width: 50px;
     color: white;
     font-size: 2em;
+  }
+  @-webkit-keyframes toggle {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes toggle {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes toggle2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes toggle2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .navbar .drop_sign .toggleOpen::after {
+    content: "x";
+    color: #7efc84;
+    -webkit-animation: toggle 2s linear 1;
+            animation: toggle 2s linear 1;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+  }
+  .navbar .drop_sign .toggleClose::after {
+    content: "=";
+    color: #7efc84;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-animation: toggle2 2s linear 1;
+            animation: toggle2 2s linear 1;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
   }
 }
 /*# sourceMappingURL=styles.css.map */

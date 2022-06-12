@@ -3,6 +3,7 @@ import './styles/styles.css';
 import Navbar from './Navbar';
 import Techstack from './Techstack';
 import Projects from './Projects';
+import Arrow from './Arrow';
 import ContactForm from './ContactForm';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -14,9 +15,13 @@ function App() {
   }, [])
 
   const [open, setOpen] = useState("close")
+  const [toggleNav, setToggleNav] = useState("toggleOpen")
+
   const handleDropdown = () => {
     setOpen("close")
+    setToggleNav("toggleClose")
   }
+  
 
   return (
   <>
@@ -26,6 +31,7 @@ function App() {
             Adnan Radwan
           </div>
           <p >Creator | Frontend developer | Perfectionist </p>
+          <Arrow AOS={AOS}/>
         </section>
 
         <section className="about" id="about">
@@ -55,7 +61,7 @@ function App() {
         </section>
       </div>
 
-      <Navbar AOS={AOS} open={open} setOpen={setOpen}/>
+      <Navbar AOS={AOS} open={open} setOpen={setOpen} toggleNav={toggleNav} setToggleNav={setToggleNav}/>
     </> 
   );
 }

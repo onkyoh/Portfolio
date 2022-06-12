@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 
-const Navbar = ({AOS, open, setOpen}) => {
+const Navbar = ({AOS, open, setOpen, toggleNav, setToggleNav}) => {
 
-  
 
   const handleDropdown = () => {
     if (open === 'open') {
-      setOpen('close') 
+      setOpen('close')
+      setToggleNav("toggleClose") 
     } else {
       setOpen('open')
+      setToggleNav("toggleOpen") 
     }
   }
 
@@ -21,11 +22,7 @@ const Navbar = ({AOS, open, setOpen}) => {
           <a href='#contact'>Contact</a>
       </ul>
       <div className='drop_sign' >
-        {open !== "open" ? 
-        <div onClick={handleDropdown}>=</div>
-          :
-        <div onClick={handleDropdown}>^</div>
-        }
+        <div onClick={handleDropdown} className={toggleNav}></div>
       </div>
     </div>
   )
