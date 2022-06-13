@@ -278,7 +278,7 @@ html, body {
           flex-direction: column;
   border-radius: 50%;
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
