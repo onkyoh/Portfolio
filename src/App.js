@@ -22,7 +22,7 @@ function App() {
   }, [])
 
   const [open, setOpen] = useState("close")
-  const [toggleNav, setToggleNav] = useState("toggleOpen")
+  const [toggleNav, setToggleNav] = useState("toggleClose")
 
   const handleDropdown = () => {
     setOpen("close")
