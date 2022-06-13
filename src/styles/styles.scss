@@ -62,6 +62,42 @@ html, body {
     overflow-x: hidden ;
 }
 
+@keyframes openLeft {
+    to {
+        transform: translate(-200%);
+        opacity: 0;
+    }
+}
+@keyframes openRight {
+    to {
+        transform: translate(200%);
+        opacity: 0;
+    }
+}
+
+.opener {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    @include flexCenter();
+    #open_left {
+        height: 100%;
+        width: 50%;
+        border-right: 5px solid $light-green;
+        position: relative;
+        background-color: $primary-gray;
+        animation: openLeft 3s ease 1;
+    }
+    #open_right {
+        height: 100%;
+        width: 50%;
+        border-left: 5px solid $light-green;
+        position: relative;
+        background-color: $primary-gray;
+        animation: openRight 3s ease 1;
+    }
+}
+
 .navbar {
     position: fixed;
     top: 0px;

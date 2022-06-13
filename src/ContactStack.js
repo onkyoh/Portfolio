@@ -3,7 +3,7 @@ import Email from '../src/icons/email.png'
 import Github from '../src/icons/github.png'
 import Linkedin from '../src/icons/linkedin.png'
 
-const ContactStack = ({AOS}) => {
+const ContactStack = () => {
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')

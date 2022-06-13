@@ -78,6 +78,73 @@ html, body {
   overflow-x: hidden;
 }
 
+@-webkit-keyframes openLeft {
+  to {
+    -webkit-transform: translate(-200%);
+            transform: translate(-200%);
+    opacity: 0;
+  }
+}
+
+@keyframes openLeft {
+  to {
+    -webkit-transform: translate(-200%);
+            transform: translate(-200%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes openRight {
+  to {
+    -webkit-transform: translate(200%);
+            transform: translate(200%);
+    opacity: 0;
+  }
+}
+
+@keyframes openRight {
+  to {
+    -webkit-transform: translate(200%);
+            transform: translate(200%);
+    opacity: 0;
+  }
+}
+
+.opener {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.opener #open_left {
+  height: 100%;
+  width: 50%;
+  border-right: 5px solid #7efc84;
+  position: relative;
+  background-color: #1a1919;
+  -webkit-animation: openLeft 3s ease 1;
+          animation: openLeft 3s ease 1;
+}
+
+.opener #open_right {
+  height: 100%;
+  width: 50%;
+  border-left: 5px solid #7efc84;
+  position: relative;
+  background-color: #1a1919;
+  -webkit-animation: openRight 3s ease 1;
+          animation: openRight 3s ease 1;
+}
+
 .navbar {
   position: fixed;
   top: 0px;
