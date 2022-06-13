@@ -4,7 +4,8 @@ import Navbar from './Navbar';
 import Techstack from './Techstack';
 import Projects from './Projects';
 import Arrow from './Arrow';
-import ContactForm from './ContactForm';
+import ContactStack from './ContactStack';
+import Footer from './Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -56,9 +57,17 @@ function App() {
         </section>
 
         <section className="contact" id="contact" >
-          <h1>Contact Me</h1>
-          <ContactForm/>
+          <div id="contact_container">
+            <p id="email">adnanradwan_8@hotmail.com</p>
+            <div>
+              <h1>Contact Me  </h1>
+              <p>Feel free to get in contact for whatever!</p>
+            </div>
+            <ContactStack/>
+          </div>
         </section>
+
+        <Footer />
       </div>
 
       <Navbar AOS={AOS} open={open} setOpen={setOpen} toggleNav={toggleNav} setToggleNav={setToggleNav}/>

@@ -68,7 +68,7 @@ html, body {
     width: 100vw;
     height: 75px;
     @include flexCenter();
-    border-bottom: 5px solid white;
+    border-bottom: 5px solid $light-green;
     ul {
         @include flexCenter();
         list-style: none;
@@ -111,38 +111,43 @@ html, body {
         width: fit-content;
         text-align: center;
     }
+    @keyframes bounce {
+        50% {
+            transform: translate(0, 15px)
+        }
+        100% {
+            transform: translate(0, 0)
+        }
+    }
     .arrow {
             @include flexCenter();
             flex-direction: column;
-            background: none;
+            border-radius: 50%;
             position: absolute;
-            bottom: 5%;
+            bottom: 10%;
             user-select: none;
-            #rectangle {
-                aspect-ratio: 1/1.75;
-                width: calc(max(1.5vw, 25px));
-                background-color: rgb(105, 145, 107);
-                transition: background-color 1s;
-            }      
-            #triangle {
-                width: 0; 
-                height: 0; 
-                border-left: calc(max(1.5vw, 25px)) solid transparent;
-                border-right: calc(max(1.5vw, 25px)) solid transparent;
-                border-top: calc(max(1.5vw, 25px)) solid rgb(105, 145, 107);
-                background: none; 
-                transition: border-top 1s;
-            }
-            &:hover {
-                #rectangle {
-                    background-color: $light-green;
-                }
-                #triangle {
-                    border-top: calc(max(1.5vw, 25px)) solid $light-green;
+            transition: translate 1s;
+            animation: bounce 1s ease-in-out infinite;
+                #triangle1 {
+                    width: 0; 
+                    height: 0; 
+                    border-left: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-top: 20px solid $light-green;
+                    @include flexCenter();
+                    #triangle2 {
+                        width: 0; 
+                        height: 0; 
+                        border-left: 15px solid transparent;
+                        border-right: 15px solid transparent;
+                        border-top: 15px solid $primary-gray;
+                        background: none;
+                        position: relative;
+                        top: -12.5px;
+                    }
                 }
             }
         }
-    }
   
 
 .about {
@@ -348,11 +353,75 @@ html, body {
     @include flexCenter();
     position: relative;
     color: white;
-    h1 {
-        font-size: 3.5em;
-        line-height: 80%;
-        border: 2px solid $light-green;
+    #contact_container {
+        width: calc(min(90%, 800px));
+        height: 100%;
+        @include flexCenter();
+        border-left: 2px solid $light-green;
+        border-right: 2px solid $light-green;
+        position: relative;
+        div {
+            @include flexCenter();
+            flex-direction: column;
+            gap: 2vw;
+            h1 {
+                font-size: calc(clamp(2em, 3vw ,3.5em));
+                line-height: 80%;
+                border: 2px solid $light-green;
+                width: fit-content;
+            }
+            p {
+                font-size: calc(clamp(1em, 3vw ,1.5em));
+                width: 80%;
+                text-align: center;
+            }
+        }
+        #email {
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            position: absolute;
+            left: 0;
+            transform: translate(-50%);
+            padding: 0.5%;
+            font-size: calc(min(1em, 3vw));
+        }
     }
+    ul {
+        @include flexCenter();
+        flex-direction: column;
+        list-style: none;
+        gap: calc(min(25px, 1vw));
+        position: absolute;
+        right: 0;
+        transform: translate(50%);
+            img {
+                width: calc(clamp(40px, 10vw, 100px));
+                cursor: pointer;
+                opacity: 0.5;
+                transition: opacity 1s;
+                width: calc(clamp(50px, 15vw, 75px));
+                &:hover {
+                    opacity: 1;
+                }
+        }
+    }
+}
+
+.footer {
+    @include flexCenter();
+    gap: 2vw;
+    border-top: 2px solid white;
+    padding: 15px 0;
+    ul {
+    @include flexCenter();
+    flex-direction: column;
+    flex-wrap: wrap;
+    a {
+        font-size: calc(clamp(0.3em, 2vw ,1em));
+        text-decoration: none;
+        color: white;
+    }
+}
 }
 
 @media only screen and (max-width: 1395px) {
@@ -367,7 +436,7 @@ html, body {
 
 @media only screen and (max-width: 600px) {
     .navbar {
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid $light-green;
         align-items: flex-start;
         ul {
             position: absolute;
@@ -375,7 +444,7 @@ html, body {
             @include flexCenter();
             flex-direction: column;
             justify-content: flex-end;
-            width: 40%;
+            width: 50%;
             list-style: none;
             gap: 0vw;
             transition: transform 1s;
@@ -387,11 +456,11 @@ html, body {
                 width: 100%;
                 text-align: center;
                 padding: 2.5% 0;
-                transition: color 0.25s, background-color 1s;
+                transition: color 0.25s, background-color 1s, width 0.5s ease;
                 &:hover {
                     color: $primary-gray;
                     background-color: $light-green;
-
+                    width: 110%;
                 }
             }
         }
@@ -406,7 +475,7 @@ html, body {
             justify-content: flex-end;
             width: 100%;
             height: 75px;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid $light-green;
             padding: 0 2%;
             position: absolute;
             div {
