@@ -14,7 +14,7 @@ const ContactStack = () => {
     <ul>
         <a href="mailto:adnanradwan_8@hotmail.com"><img src={Email} alt="Email"/></a>
         <li><img src={Github} alt="Github" onClick={()=> openInNewTab("https://github.com/onkyoh")}/></li>
-        <li><img src={Linkedin} alt="LinkedIn" onClick={()=> openInNewTab("https://www.linkedin.com/in/adnan-radwan-0505aa241")}/></li>
+        <li><img src={Linkedin} alt="LinkedIn" onClick={()=> openInNewTab("https://www.linkedin.com/in/adnan-radwan")}/></li>
     </ul>
   )
 }
