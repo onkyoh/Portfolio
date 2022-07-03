@@ -190,10 +190,10 @@ html, body {
     width: 100vw;
     @include flexCenter();
     flex-direction: column;
-    padding: 5%;
+    padding: 2.5% 5%;
     color: white;
     margin-bottom: 100px;
-    gap: 100px;
+    gap: 4vh;
     h1 {
         font-size: calc(min(5em, 13vw));
         line-height: 80%;
@@ -204,7 +204,8 @@ html, body {
         @include flexCenter();
         justify-content: space-around;
         flex-wrap: wrap;
-        gap: 100px;
+        gap: 4vh;
+        margin-bottom: 100px;
         p {
             width: calc(min(100%, 600px));
             font-size: calc(clamp(1.1em, 3vw, 1.5em));
@@ -275,14 +276,12 @@ html, body {
         line-height: 75%;
         border: 2px solid $light-green;
     }
-    p {
-        font-size: calc(clamp(0.95em, 3.3vw, 1.7em));
+    > p {
+        font-size: calc(clamp(0.95em, 4vw, 1.825em));
         width: calc(min(90%, 600px));
         border-left: 2px solid $light-green;
         border-right: 2px solid $light-green;
         padding: 0 2%;
-    }
-    #slogan {
         margin: 75px 0 ;
     }
 
@@ -316,7 +315,9 @@ html, body {
                 p {
                     width: 100%;
                     padding: 0 5%;
-                    font-size: calc(clamp(0.9em, 2vw , 1.3em))
+                    font-size: calc(clamp(0.9em, 2vw , 1.3em));
+                    border-left: 2px solid $light-green;
+                    border-right: 2px solid $light-green;
                 }
                 .button_group {
                     @include flexCenter();

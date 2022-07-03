@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = ({AOS, open, setOpen, toggleNav, setToggleNav}) => {
+const Navbar = ({open, setOpen, toggleNav, setToggleNav}) => {
 
 
   const handleDropdown = () => {
@@ -14,7 +14,7 @@ const Navbar = ({AOS, open, setOpen, toggleNav, setToggleNav}) => {
   }
 
   return (
-    <div className='navbar'  data-aos="slide-down" data-aos-duration="1000">
+    <div className='navbar'>
       <ul className={open}>
           <a href='#landing'>Landing</a>
           <a href='#about'>About</a>

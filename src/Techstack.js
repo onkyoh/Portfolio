@@ -8,10 +8,10 @@ import Bootstrap from '../src/icons/bootstrap.png'
 import Sass from '../src/icons/sass.png'
 import Firebase from '../src/icons/firebase.png'
 
-const Techstack = ({AOS}) => {
+const Techstack = () => {
 
   return (
-    <div className='techstack_container' data-aos="slide-up" data-aos-duration="1000">
+    <div className='techstack_container'>
       <p >Technology I use:</p>
       <div>
         <ul>

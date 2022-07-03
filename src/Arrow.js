@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const Arrow = ({AOS}) => {
+const Arrow = () => {
 
   return (
-        <a href="#about" className="arrow" data-aos="fade-in" data-aos-duration="2500">
+        <a href="#about" className="arrow">
             <div id='triangle1'>
                 <div id='triangle2'></div>
             </div>

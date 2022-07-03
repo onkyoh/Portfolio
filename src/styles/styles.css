@@ -332,10 +332,10 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 5%;
+  padding: 2.5% 5%;
   color: white;
   margin-bottom: 100px;
-  gap: 100px;
+  gap: 4vh;
 }
 
 .about h1 {
@@ -359,7 +359,8 @@ html, body {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 100px;
+  gap: 4vh;
+  margin-bottom: 100px;
 }
 
 .about .p_img_container p {
@@ -484,15 +485,12 @@ html, body {
   border: 2px solid #7efc84;
 }
 
-.projects p {
-  font-size: calc(clamp(0.95em, 3.3vw, 1.7em));
+.projects > p {
+  font-size: calc(clamp(0.95em, 4vw, 1.825em));
   width: calc(min(90%, 600px));
   border-left: 2px solid #7efc84;
   border-right: 2px solid #7efc84;
   padding: 0 2%;
-}
-
-.projects #slogan {
   margin: 75px 0;
 }
 
@@ -562,6 +560,8 @@ html, body {
   width: 100%;
   padding: 0 5%;
   font-size: calc(clamp(0.9em, 2vw , 1.3em));
+  border-left: 2px solid #7efc84;
+  border-right: 2px solid #7efc84;
 }
 
 .projects .projects_container .each_project .description_container .button_group {
