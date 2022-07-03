@@ -37,11 +37,12 @@ function App() {
         <div id="open_left"></div>
         <div id="open_right"></div> 
       </div>
-      :
+      : 
+      null}
       <>
           <div onClick={handleDropdown}>
-            <section className='landing' id="landing" >
-              <div className='name'>
+            <section className='landing' id="landing">
+              <div className='name' >
                 Adnan Radwan
               </div>
               <p >Creator | Frontend developer | Perfectionist </p>
@@ -85,7 +86,6 @@ function App() {
 
           <Navbar AOS={AOS} open={open} setOpen={setOpen} toggleNav={toggleNav} setToggleNav={setToggleNav}/>
         </> 
-      }
   </>
   );
 }
