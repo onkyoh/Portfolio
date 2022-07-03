@@ -9,15 +9,6 @@ import Footer from './Footer';
 
 function App() {
 
-  const [cover, setCover] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCover(false)
-    }, 1500)
- 
-  }, [])
-
   const [open, setOpen] = useState("close")
   const [toggleNav, setToggleNav] = useState("toggleClose")
 
@@ -29,13 +20,6 @@ function App() {
 
   return (
     <>
-      {cover ? 
-      <div className='opener'>
-        <div id="open_left"></div>
-        <div id="open_right"></div> 
-      </div>
-      : 
-      null}
       <>
           <div onClick={handleDropdown}>
             <section className='landing' id="landing">
